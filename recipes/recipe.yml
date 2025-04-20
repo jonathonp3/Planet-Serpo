@@ -23,7 +23,20 @@ modules:
     install:
       - firefox
       - gedit
+      - gparted
+      - libreoffice
       - pluma
+      - samba
+      - samba-client
+      - simple-scan
+      - syncthing
+      - yt-dlp
+      - libvirt-daemon-config-network
+      - libvirt-daemon-kvm
+      - qemu-kvm
+      - virt-install
+      - virt-manager
+      - virt-viewer
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
