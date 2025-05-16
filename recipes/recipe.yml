@@ -18,50 +18,10 @@ modules:
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
   - type: rpm-ostree
-    repos:
-      - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
     install:
       - firefox
-      - gedit
-      - gparted
-      - libreoffice
-      - pluma
-      - samba
-      - samba-client
-      - simple-scan
-      - snapd
-      - syncthing
-      - yt-dlp
-      - libvirt-daemon-config-network
-      - libvirt-daemon-kvm
-      - qemu-kvm
-      - virt-install
-      - virt-manager
-      - virt-viewer
-
-  - type: default-flatpaks
-    notify: true # Send notification after install/uninstall is finished (true/false)
-    system:
-      # If no repo information is specified, Flathub will be used by default
-      install:
-        - org.gnome.Loupe
 
     user: {} # Also add Flathub user repo, but no user packages
-  
-  - type: gnome-extensions
-    install:
-        # AppIndicator and KStatusNotifierItem Support # https://extensions.gnome.org/extension/615/appindicator-support/
-        - 6 # Apps Menu - Add a category-based menu for apps.
-        - 3193 # Blur my Shell https://extensions.gnome.org/extension/3193/blur-my-shell/
-        - 307 # Dash-to-dock https://extensions.gnome.org/extension/307/dash-to-dock/
-        - 2 # Frippery Move Clock https://extensions.gnome.org/extension/2/move-clock/
-        # 1319 # GSConnect https://extensions.gnome.org/extension/1319/gsconnect/
-        # 798 # Hot Edges https://extensions.gnome.org/extension/798/overview-edge-gesture/
-        # 6655 # OpenWeather Refined https://extensions.gnome.org/extension/6655/openweather/
-        - 4 # Frippery Panel Favorites https://extensions.gnome.org/extension/4/panel-favorites/
-        # 6139 # Tailscale QS https://extensions.gnome.org/extension/6139/tailscale-qs/
-        - 1460 # Vitals https://extensions.gnome.org/extension/1460/vitals/
-        - 602 # Window List by fmuellner https://extensions.gnome.org/extension/602/window-list/
  
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
